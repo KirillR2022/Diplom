@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Shop{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Дополнительные стили или скрипты -->
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{{ url_for('home.index') }}">Главная</a>
+            <a href="{{ url_for('products.show_products') }}">Товары</a>
+            <a href="{{ url_for('register.register') }}">Регистрация</a>
+            <a href="{{ url_for('profile.user_profile') }}">Профиль</a>
+            <!-- Добавьте дополнительные ссылки, если необходимо -->
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <!-- Подвал сайта -->
+    </footer>
+
+    <!-- Дополнительные скрипты -->
+    {% block scripts %}{% endblock %}
+</body>
+</html>
